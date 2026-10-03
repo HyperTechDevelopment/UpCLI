@@ -298,7 +298,15 @@ def executar_comando(comando):
             # continuariam mexendo no mesmo install, que é exatamente a
             # sobreposição que esta contenção existe para impedir. Precisa
             # acontecer antes do fechar() abaixo, que só libera o handle.
-            job.matar_tudo()
+            # Sem job contendo o processo, matar_tudo() é no-op: encerra o
+            # processo direto para o wait() abaixo não travar para sempre.
+            if job.contido:
+                job.matar_tudo()
+            else:
+                try:
+                    processo.terminate()
+                except Exception:
+                    pass
         # Drena o status: `returncode` continua None até o processo ser
         # coletado, e ler antes disso daria falso negativo em todo comando.
         # O wait é instantâneo aqui (só o processo direto, que já terminou).
