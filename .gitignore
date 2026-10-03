@@ -222,6 +222,8 @@ __marimo__/
 # AI-Agents
 .commandcode/
 graphify-out/
+# AGENTS — config gerado em runtime (fonte da verdade, criado no primeiro uso)
+AGENTS_CUSTOM.cfg
 .kilo/
 .claude/
 .omo/
