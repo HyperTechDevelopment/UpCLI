@@ -14,7 +14,7 @@ def main():
     configurar_saida_utf8()
     args = criar_parser().parse_args()
 
-    if args.update_all or args.update or args.list:
+    if args.update_all or args.update is not None or args.list:
         try:
             sys.exit(modo_automatico(args))
         except KeyboardInterrupt:
