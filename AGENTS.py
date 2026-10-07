@@ -8,6 +8,7 @@ Ponto de entrada enxuto. A implementação vive no pacote `agents/`:
     agents/componentes.py  widgets reutilizáveis (caixas, tabelas, mensagens)
     agents/gerenciador.py  lista de ferramentas e persistência
     agents/execucao.py     execução de comandos (Job Object)
+    agents/agendador.py    agendamento automático no Windows (schtasks)
     agents/telas.py        telas do modo interativo
     agents/automacao.py    seleção/execução por linha de comando
     agents/cli.py          despacho (menu ou automação)
